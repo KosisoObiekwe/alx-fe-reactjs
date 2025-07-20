@@ -1,17 +1,19 @@
 // src/App.jsx
 import React from 'react';
-import Header from './components/Header';      // Import Header component
-import MainContent from './components/MainContent'; // Import MainContent component
-import Footer from './components/Footer';      // Import Footer component
-import WelcomeMessage from './components/WelcomeMessage'; // Import the WelcomeMessage component
+import Header from './components/Header';
+import MainContent from './components/MainContent';
+import Footer from './components/Footer';
+import WelcomeMessage from './components/WelcomeMessage';
+import UserProfile from './components/UserProfile'; // ✅ Import UserProfile
 
 function App() {
   return (
     <div>
-      <Header />         {/* Include Header */}
-      <WelcomeMessage /> {/* Include WelcomeMessage */}
-      <MainContent />    {/* Include MainContent */}
-      <Footer />         {/* Include Footer */}
+      <Header />
+      <WelcomeMessage />
+      <UserProfile name="Alice" age="25" bio="Loves hiking and photography" /> {/* ✅ Use it here */}
+      <MainContent />
+      <Footer />
     </div>
   );
 }
