@@ -1,11 +1,17 @@
 // src/App.jsx
 import React from 'react';
-import WelcomeMessage from './components/WelcomeMessage';  // Import the WelcomeMessage component
+import Header from './components/Header';      // Import Header component
+import MainContent from './components/MainContent'; // Import MainContent component
+import Footer from './components/Footer';      // Import Footer component
+import WelcomeMessage from './components/WelcomeMessage'; // Import the WelcomeMessage component
 
 function App() {
   return (
     <div>
-      <WelcomeMessage />  {/* Use the WelcomeMessage component here */}
+      <Header />         {/* Include Header */}
+      <WelcomeMessage /> {/* Include WelcomeMessage */}
+      <MainContent />    {/* Include MainContent */}
+      <Footer />         {/* Include Footer */}
     </div>
   );
 }
