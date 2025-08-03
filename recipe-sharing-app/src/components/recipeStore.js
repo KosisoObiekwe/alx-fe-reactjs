@@ -1,16 +1,16 @@
 // src/components/recipeStore.js
 import { create } from 'zustand';
 
-export const useRecipeStore = create((set) => ({
+const useRecipeStore = create((set) => ({
     recipes: [],
-    addRecipe: (recipe) =>
-        set((state) => ({
-            recipes: [...state.recipes, { ...recipe, id: Date.now().toString() }],
-        })),
-    updateRecipe: (id, updatedRecipe) =>
+    setRecipes: (newRecipes) => set({ recipes: newRecipes }),
+    addRecipe: (recipe) => set((state) => ({
+        recipes: [...state.recipes, recipe]
+    })),
+    updateRecipe: (updatedRecipe) =>
         set((state) => ({
             recipes: state.recipes.map((r) =>
-                r.id === id ? { ...r, ...updatedRecipe } : r
+                r.id === updatedRecipe.id ? updatedRecipe : r
             ),
         })),
     deleteRecipe: (id) =>
@@ -18,3 +18,5 @@ export const useRecipeStore = create((set) => ({
             recipes: state.recipes.filter((r) => r.id !== id),
         })),
 }));
+
+export default useRecipeStore;
