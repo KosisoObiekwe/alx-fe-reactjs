@@ -1,21 +1,28 @@
+// src/components/RecipeList.jsx
 import React from 'react';
-import { useRecipeStore } from '../store/recipeStore';
+import useRecipeStore from './recipeStore';
+import { Link } from 'react-router-dom';
 
-const RecipeList = () => {
-    const { filteredRecipes } = useRecipeStore();
+function RecipeList() {
+    const recipes = useRecipeStore((state) => state.recipes);
+    const searchTerm = useRecipeStore((state) => state.searchTerm);
+
+    const filteredRecipes = recipes.filter((recipe) =>
+        recipe.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
     return (
-        <div className="space-y-4">
-            {filteredRecipes.map((recipe) => (
-                <div key={recipe.id || recipe.name} className="p-4 bg-white rounded shadow">
-                    <h2 className="text-xl font-bold">{recipe.name}</h2>
-                    <p><strong>Cuisine:</strong> {recipe.cuisine}</p>
-                    <p><strong>Ingredients:</strong> {recipe.ingredients?.join(', ')}</p>
-                    <p><strong>Instructions:</strong> {recipe.instructions}</p>
-                </div>
-            ))}
+        <div>
+            <h2>Recipe List</h2>
+            <ul>
+                {filteredRecipes.map((recipe) => (
+                    <li key={recipe.id}>
+                        <Link to={`/recipes/${recipe.id}`}>{recipe.title}</Link>
+                    </li>
+                ))}
+            </ul>
         </div>
     );
-};
+}
 
 export default RecipeList;
