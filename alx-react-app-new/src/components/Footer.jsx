@@ -4,13 +4,13 @@ function Footer() {
     return (
         <footer
             style={{
-                backgroundColor: "black",
-                color: "white",
                 textAlign: "center",
-                padding: "0.5rem"
+                backgroundColor: "#333",
+                color: "#fff",
+                padding: "10px",
             }}
         >
-            <p>&copy; 2025 My Website</p>
+            <p>© 2025 My Company</p>
         </footer>
     );
 }

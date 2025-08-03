@@ -2,15 +2,19 @@ import React from "react";
 
 function UserProfile() {
     return (
-        <div
-            style={{
-                backgroundColor: "lightgray",
-                padding: "1rem",
-                textAlign: "center"
-            }}
-        >
-            <h2>Jane Doe</h2>
-            <p>Frontend Developer</p>
+        <div>
+            <h2>User Profile</h2>
+            <span
+                style={{
+                    color: "blue",
+                    border: "1px solid blue",
+                    margin: "10px",
+                    padding: "5px",
+                    display: "inline-block",
+                }}
+            >
+                Name: Kosi
+            </span>
         </div>
     );
 }

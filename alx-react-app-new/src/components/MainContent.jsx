@@ -4,12 +4,13 @@ function MainContent() {
     return (
         <main
             style={{
-                backgroundColor: "#f4f4f4",
-                padding: "1rem",
-                textAlign: "center"
+                backgroundColor: "#f5f5f5",
+                padding: "20px",
+                color: "#333",
             }}
         >
-            <p>This is the main content of the page.</p>
+            <h2>Main Content</h2>
+            <p>This is the main content area.</p>
         </main>
     );
 }
