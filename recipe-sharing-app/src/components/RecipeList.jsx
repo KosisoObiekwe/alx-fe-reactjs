@@ -7,10 +7,10 @@ function RecipeList() {
 
     return (
         <div>
-            <h2>Recipe List</h2>
+            <h3>Recipe List</h3>
             <ul>
-                {recipes.map((recipe, index) => (
-                    <li key={index}>{recipe}</li>
+                {recipes.map((r, index) => (
+                    <li key={index}>{r}</li>
                 ))}
             </ul>
         </div>

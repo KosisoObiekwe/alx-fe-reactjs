@@ -9,7 +9,7 @@ function AddRecipeForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (recipe.trim()) {
-            addRecipe(recipe.trim());
+            addRecipe(recipe);
             setRecipe('');
         }
     };
