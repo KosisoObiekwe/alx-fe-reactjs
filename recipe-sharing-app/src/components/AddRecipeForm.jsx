@@ -1,26 +1,32 @@
 // src/components/AddRecipeForm.jsx
 import React, { useState } from 'react';
-import useRecipeStore from './recipeStore';
+import { useRecipeStore } from './recipeStore';
 
 function AddRecipeForm() {
-    const [recipe, setRecipe] = useState('');
+    const [title, setTitle] = useState('');
+    const [instructions, setInstructions] = useState('');
     const addRecipe = useRecipeStore((state) => state.addRecipe);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (recipe.trim()) {
-            addRecipe(recipe);
-            setRecipe('');
-        }
+        if (!title || !instructions) return;
+        addRecipe({ title, instructions });
+        setTitle('');
+        setInstructions('');
     };
 
     return (
         <form onSubmit={handleSubmit}>
             <input
                 type="text"
-                value={recipe}
-                onChange={(e) => setRecipe(e.target.value)}
-                placeholder="Enter recipe name"
+                placeholder="Recipe Title"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+            />
+            <textarea
+                placeholder="Instructions"
+                value={instructions}
+                onChange={(e) => setInstructions(e.target.value)}
             />
             <button type="submit">Add Recipe</button>
         </form>
