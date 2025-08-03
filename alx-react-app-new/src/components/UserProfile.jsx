@@ -1,12 +1,18 @@
-// src/components/UserProfile.jsx
-const UserProfile = (props) => {
+import React from "react";
+
+function UserProfile() {
     return (
-        <div>
-            <h2>{props.name}</h2>
-            <p>Age: {props.age}</p>
-            <p>Bio: {props.bio}</p>
+        <div
+            style={{
+                backgroundColor: "lightgray",
+                padding: "1rem",
+                textAlign: "center"
+            }}
+        >
+            <h2>Jane Doe</h2>
+            <p>Frontend Developer</p>
         </div>
     );
-};
+}
 
 export default UserProfile;

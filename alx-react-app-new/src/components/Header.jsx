@@ -1,8 +1,16 @@
-// src/components/Header.jsx
+import React from "react";
+
 function Header() {
     return (
-        <header>
-            <h1>My Favorite Cities</h1>
+        <header
+            style={{
+                backgroundColor: "blue",
+                color: "white",
+                textAlign: "center",
+                padding: "1rem"
+            }}
+        >
+            <h1>Welcome to My Website</h1>
         </header>
     );
 }

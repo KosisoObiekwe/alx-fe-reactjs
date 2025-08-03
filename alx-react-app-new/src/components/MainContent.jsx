@@ -1,8 +1,15 @@
-// src/components/MainContent.jsx
+import React from "react";
+
 function MainContent() {
     return (
-        <main>
-            <p>I love to visit New York, Paris, and Tokyo.</p>
+        <main
+            style={{
+                backgroundColor: "#f4f4f4",
+                padding: "1rem",
+                textAlign: "center"
+            }}
+        >
+            <p>This is the main content of the page.</p>
         </main>
     );
 }

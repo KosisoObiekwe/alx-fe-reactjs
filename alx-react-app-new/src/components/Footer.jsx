@@ -1,8 +1,16 @@
-// src/components/Footer.jsx
+import React from "react";
+
 function Footer() {
     return (
-        <footer>
-            <p>© 2023 City Lovers</p>
+        <footer
+            style={{
+                backgroundColor: "black",
+                color: "white",
+                textAlign: "center",
+                padding: "0.5rem"
+            }}
+        >
+            <p>&copy; 2025 My Website</p>
         </footer>
     );
 }
