@@ -1,26 +1,36 @@
+import React, { useState } from "react";
+
 function Contact() {
-    const handleClick = () => {
-        alert("Thanks for contacting us!");
+    const [message, setMessage] = useState("");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setMessage("Message sent!");
     };
 
     return (
-        <div style={{ padding: "20px" }}>
-            <h2 style={{ color: "blue" }}>Contact Us</h2>
-            <p style={{ fontSize: "16px" }}>
-                We'd love to hear from you. Please click below to get in touch.
-            </p>
-            <button
-                onClick={handleClick}
-                style={{
-                    padding: "10px 20px",
-                    backgroundColor: "lightgreen",
-                    border: "none",
-                    cursor: "pointer",
-                    fontWeight: "bold",
-                }}
-            >
-                Click to Contact
-            </button>
+        <div>
+            <h1 style={{ color: "teal", fontSize: "24px" }}>Contact Us</h1>
+            <form onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    placeholder="Your message"
+                    style={{ padding: "8px", marginRight: "10px" }}
+                />
+                <button
+                    type="submit"
+                    style={{
+                        backgroundColor: "green",
+                        color: "white",
+                        padding: "8px",
+                        border: "none",
+                        cursor: "pointer",
+                    }}
+                >
+                    Send
+                </button>
+            </form>
+            {message && <p style={{ color: "blue", marginTop: "10px" }}>{message}</p>}
         </div>
     );
 }
