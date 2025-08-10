@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { fetchUserData } from '../services/githubService';
 
 function Search() {
     const [username, setUsername] = useState('');
@@ -6,7 +7,6 @@ function Search() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    // Handle form submit
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!username) return;
@@ -16,11 +16,10 @@ function Search() {
         setUserData(null);
 
         try {
-            // Call the fetchUserData function (we’ll create this)
             const data = await fetchUserData(username);
             setUserData(data);
         } catch (err) {
-            setError('Looks like we can’t find the user');
+            setError('Looks like we cant find the user');
         } finally {
             setLoading(false);
         }
