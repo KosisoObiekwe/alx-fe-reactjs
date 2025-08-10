@@ -1,9 +1,11 @@
 // src/App.jsx
+import React from "react";
+
 function App() {
   return (
-    <div style={{ padding: '20px', fontFamily: 'sans-serif' }}>
+    <div>
       <h1>GitHub User Search</h1>
-      <p>Start building your search component here...</p>
+      <p>App setup complete!</p>
     </div>
   );
 }
